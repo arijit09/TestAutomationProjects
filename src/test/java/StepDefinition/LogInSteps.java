@@ -14,8 +14,6 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.Parameters;
-
 import PageMethods.LoginPageMethods;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -26,7 +24,7 @@ import io.cucumber.java.en.When;
 
 public class LogInSteps {
 	
-	
+	public static String Browser= "chrome";
 	WebDriver driver = null;
 	LoginPageMethods loginMethod;
 	public DesiredCapabilities cap = new DesiredCapabilities();
@@ -36,27 +34,27 @@ public class LogInSteps {
 		//System.setProperty("webdriver.chrome.driver","src/test/resources/Drivers/chromedriver.exe");
 		//driver = new ChromeDriver();
 		//driver.manage().window().maximize();
-		//if(Browser.equals("chrome")) {
-			cap.setPlatform(Platform.ANY);
+		if(Browser.equals("chrome")) {
+			cap.setPlatform(Platform.ANY); 
 			cap.setBrowserName("chrome");
 			
 			ChromeOptions options = new ChromeOptions();
 			options.merge(cap);
-//		}
-//		else if(Browser.equals("firefox")) {
-//			cap.setPlatform(Platform.ANY);
-//			cap.setBrowserName("firefox");
-//			
-//			FirefoxOptions options = new FirefoxOptions();
-//			options.merge(cap);
-//		}
-//		else if(Browser.equals("MicrosoftEdge")) {
-//			cap.setPlatform(Platform.ANY);
-//			cap.setBrowserName("MicrosoftEdge");
-//			
-//			EdgeOptions options = new EdgeOptions();
-//			options.merge(cap);
-//		}
+		}
+		else if(Browser.equals("firefox")) {
+			cap.setPlatform(Platform.ANY);
+			cap.setBrowserName("firefox");
+			
+			FirefoxOptions options = new FirefoxOptions();
+			options.merge(cap);
+		}
+		else if(Browser.equals("MicrosoftEdge")) {
+			cap.setPlatform(Platform.ANY);
+			cap.setBrowserName("MicrosoftEdge");
+			
+			EdgeOptions options = new EdgeOptions();
+			options.merge(cap);
+		}
 		
 		
 		

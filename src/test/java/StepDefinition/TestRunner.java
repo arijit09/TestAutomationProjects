@@ -9,6 +9,8 @@ import io.cucumber.junit.*;
 glue= {"StepDefinition"},
 plugin = {"pretty","html:target/HtmlReports.html"})
 
+//plugin = {"pretty","html:target/HtmlReports.html"}
+//"json:target/cucumber.json"
 public class TestRunner {
 
 }
